@@ -1,0 +1,69 @@
+! Use extended color scheme
+rofi.color-enabled:                  true
+! Color scheme for normal row
+rofi.color-normal:                   argb:00000000, #ebdbb2, argb:3affffff, #ebdbb2, #282828
+! Color scheme for urgent row
+rofi.color-urgent:                   argb:00000000, #ff817f, argb:3affffff, #ff817f, #02143f
+! Color scheme for active row
+rofi.color-active:                   argb:00000000, #6aa4ff, argb:3affffff, #6aa4ff, #02143f
+! Color scheme window
+rofi.color-window:                   argb:ee282828, #ebdbb2, #ebdbb2
+! Separator style (none, dash, solid)
+rofi.separator-style:                solid
+
+
+! uxrvt options
+URxvt.scrollBar: false
+! URxvt.background: #191919
+! URxvt.foreground: #ebdbb3
+URxvt.perl-ext-common: resize-font,clipboard,new-window
+URxvt.keysym.C-N: perl:new-window 
+URxvt.iso14755: False
+URxvt.keysym.Shift-Control-C: perl:clipboard:copy
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+URxvt.clipboard.compycmd: xsel -ib
+URxvt.clipboard.pastecmd: xsel -ob
+! URxvt.font: xft:Hack:size=9
+! URxvt.font: xft:CCMono:size=12,xft:Terminess Powerline:size=11
+URxvt.font: xft:Terminess Powerline:size=11
+URxvt.letterSpace: 0
+URxvt.lsp: 0.95
+
+URxvt.background: #262626
+URxvt.foreground: #ebdbb2
+! Black + DarkGrey
+URxvt.color0: #262626
+URxvt.color8: #7c6f64
+! DarkRed + Red
+URxvt.color1: #fb4934
+URxvt.color9: #cc241d
+
+! hard contrast: *background: #1d2021
+*background: #262626
+! soft contrast: *background: #32302f
+*foreground: #ebdbb2
+! Black + DarkGrey
+*color0:  #262626
+*color8:  #928374
+! DarkRed + Red
+*color1:  #cc241d
+*color9:  #fb4934
+! DarkGreen + Green
+*color2:  #98971a
+*color10: #b8bb26
+! DarkYellow + Yellow
+*color3:  #d79921
+*color11: #fabd2f
+! DarkBlue + Blue
+*color4:  #458588
+*color12: #83a598
+! DarkMagenta + Magenta
+*color5:  #b16286
+*color13: #d3869b
+! DarkCyan + Cyan
+*color6:  #689d6a
+*color14: #8ec07c
+! LightGrey + White
+*color7:  #a89984
+*color15: #ebdbb2
+

@@ -1,0 +1,264 @@
+[colors]
+background = #181B20
+background-alt = #212121
+foreground = #fafafa
+foreground-alt = #555
+primary = #ffb52a
+secondary = #e60053
+alert = #bd2c40
+
+
+[bar/top]
+monitor = ${env:MONITOR:}
+width = 100%
+height = 24
+offset-x = 0
+offset-y = 0
+radius = 0
+fixed-center = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 2
+line-color = #f00
+
+border-size = 0
+border-color = #00000000
+
+padding-left = 2
+padding-right = 2 
+
+module-margin-left = 1
+module-margin-right = 1
+
+font-1 = Misc Fixed:pixelsize=11;0
+font-0 = unifont:size=10:antialias=false;0
+font-2 = "siji:size=11;1"
+
+modules-left = arch mpdtwo i3 
+modules-center = mpd xwindow
+modules-right = battery batterytwo volume date time 
+
+tray-position = none
+tray-padding = 2
+
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:50:...%
+format-underline = #BF4A36
+
+
+[module/arch]
+type = custom/script
+exec = echo "@ C-II" 
+; exec = echo "@ $(pwd)" 
+
+format-prefix = "AppIns "
+format-prefix-foreground = #027AB6
+
+
+[module/i3]
+type = internal/i3
+
+enable-click = true
+strip-wsnumbers = true
+
+ws-icon-0 = 1;♚
+ws-icon-1 = 2;♛
+ws-icon-2 = 3;♜
+ws-icon-3 = 4;♝
+ws-icon-4 = 5;♞
+ws-icon-default = ♟
+
+label-focused = %index%
+label-focused-foreground = #ffffff
+label-focused-background = #2f2f2f
+label-focused-padding = 1
+
+label-unfocused = %index%
+label-unfocused-padding = 1
+
+label-visible = %index%
+label-visible-padding = 1
+
+label-urgent = %index%
+label-urgent-foreground = #000000
+label-urgent-background = #bd2c40
+label-urgent-padding = 1
+
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = " "
+format-prefix-foreground = #42A89A
+label = %percentage%%
+
+
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix = " "
+format-prefix-foreground = #BF4A36
+label = %percentage_used%%
+
+[module/battery]
+type = internal/battery
+full-at = 98
+battery = BAT0
+time-format = %H:%M
+format-charging = <animation-charging> <label-charging>
+format-discharging = <ramp-capacity> <label-discharging> 
+format-full =  <ramp-capacity> F
+label-charging = %percentage%% 
+label-discharging = %percentage%%
+label-full = F (%time%)
+ramp-capacity-1-foreground = #fabd2f
+ramp-capacity-4-foreground = #b8bb26
+ramp-capacity-0-foreground = #cc241d
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+animation-charging-foreground = #689d6a
+; animation-charging-0 = 
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+bar-capacity-width = 10
+animation-charging-framerate = 700
+
+[module/batterytwo]
+type = internal/battery
+full-at = 98
+battery = BAT1
+time-format = %H:%M
+format-charging = <animation-charging> <label-charging>
+format-discharging = <ramp-capacity> <label-discharging> 
+format-full = <ramp-capacity> F
+label-charging = %percentage%%
+label-discharging = %percentage%% 
+label-full = FULL
+ramp-capacity-1-foreground = #fabd2f
+ramp-capacity-4-foreground = #b8bb26
+ramp-capacity-0-foreground = #cc241d
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+animation-charging-foreground = #689d6a
+; animation-charging-0 = )
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+
+bar-capacity-width = 10
+animation-charging-framerate = 700
+
+
+[module/date]
+type = internal/date
+interval = 5
+
+date = "%m-%d-%Y"
+date-alt = "%a Week %V"
+
+time = %H:%M
+time-alt = %H:%M:%S
+
+format-prefix = " "
+format-prefix-foreground = #42A89A
+
+label = %date%
+
+
+[module/time]
+type = internal/date
+interval = 5
+
+time = %H:%M
+format-prefix = " "
+format-prefix-foreground = #BF4A36
+label = %time%
+
+
+[module/volume]
+type = internal/volume
+
+format-volume = <ramp-volume> <label-volume>
+label-volume = %percentage%%
+
+format-muted = <label-muted>
+label-muted = 
+label-muted-foreground = #66
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+ramp-volume-foreground = #027AB6
+
+
+[settings]
+screenchange-reload = true
+
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+
+[module/mpd]
+type = internal/mpd
+
+host = 127.0.0.1
+port = 6600
+
+icon-foreground = ${colors.foreground}
+icon-play = 
+icon-pause = 
+icon-stop = 
+icon-prev = 
+icon-next = 
+icon-seekb = ⏪
+icon-seekf = ⏩
+icon-random = r
+icon-repeat = loop
+icon-repeatone = rt
+
+label-song = %artist:0:20:-%, %title:0:35:-%
+
+format-online-underline = #BF4A36
+; label-song-foreground = #027AB6
+format-online = <label-song> 
+format-online-padding = 1
+
+bar-progress-width = 10
+bar-progress-indicator = |
+bar-progress-fill = -
+bar-progress-empty = -
+
+[module/mpdtwo]
+type = internal/mpd
+
+icon-play = 
+icon-pause = 
+icon-stop = 
+icon-prev = 
+icon-next = 
+icon-seekb = ⏪
+icon-seekf = ⏩
+icon-random = r
+icon-repeat = loop
+icon-repeatone = rt
+format-online = <label-time>  <icon-prev> <toggle> <icon-next> 
+label-time-foreground = #027AB6
+
+
