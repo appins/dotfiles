@@ -1,6 +1,6 @@
 call plug#begin('~/.vim/plugged')
 
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -26,3 +26,4 @@ colorscheme gruvbox
 let g:airline_powerline_fonts = 1
 
 set nowrap
+set bg=dark
