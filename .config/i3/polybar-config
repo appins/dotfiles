@@ -55,7 +55,7 @@ type = custom/script
 exec = echo "@ C-II" 
 ; exec = echo "@ $(pwd)" 
 
-format-prefix = "AppIns "
+format-prefix = "appins "
 format-prefix-foreground = #027AB6
 
 

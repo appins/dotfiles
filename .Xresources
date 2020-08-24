@@ -25,7 +25,7 @@ URxvt.clipboard.compycmd: xsel -ib
 URxvt.clipboard.pastecmd: xsel -ob
 ! URxvt.font: xft:Hack:size=9
 ! URxvt.font: xft:CCMono:size=12,xft:Terminess Powerline:size=11
-URxvt.font: xft:Terminess Powerline:size=11
+URxvt.font: xft:Space Mono for Powerline:size=11
 URxvt.letterSpace: 0
 URxvt.lsp: 0.95
 
