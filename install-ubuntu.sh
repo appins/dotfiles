@@ -10,7 +10,7 @@ sudo apt update
 # Install easy deps
 sudo apt install --yes git xorg i3-wm rofi lightdm light-locker notify-osd unifont \
 	rxvt-unicode x11-utils neofetch neovim htop arandr pavucontrol curl \
-	lxappearance fonts-powerline arc-theme
+	lxappearance fonts-powerline arc-theme 
 
 
 # Install Siji font

@@ -268,7 +268,8 @@ bindsym XF86ScreenSaver exec i3lock -i ~/wallpaper_locked.png -e
  bindsym XF86AudioLowerVolume exec amixer sset 'Master' 5%-
  bindsym XF86AudioMute exec /usr/bin/pactl set-sink-mute @DEFAULT_SINK@ toggle
 
-exec feh --bg-scale /home/appins/Pictures/wallpaper.jpg --bg-fill
+# exec feh --bg-scale /home/appins/Pictures/wallpaper.jpg --bg-fill
+exec --no-startup-id xsetroot -solid "#191836"
 
 # We might not even need this...
 #exec compton
